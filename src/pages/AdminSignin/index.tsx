@@ -38,7 +38,7 @@ const AdminSignin = () => {
       >
         <S.AuthContainerHeader>
           <S.AuthContainerLogo style={{ color: token.colorTextSecondary }}>
-            <img src="/logo.png" alt="" />
+            <h1>Watt Sistema</h1>
           </S.AuthContainerLogo>
           <span style={{ color: token.colorTextDescription }}>Entrar</span>
         </S.AuthContainerHeader>
@@ -75,9 +75,9 @@ const AdminSignin = () => {
         </S.AuthContainerContent>
       </S.AuthContainer>
 
-      <S.AuthBackground>
+      {/* <S.AuthBackground>
         <img src="/background.jpeg" alt="" />
-      </S.AuthBackground>
+      </S.AuthBackground> */}
     </S.AdminSignin>
   )
 }

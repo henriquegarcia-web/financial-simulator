@@ -62,7 +62,6 @@ export const AuthContainerHeader = styled.div`
   align-items: center;
   row-gap: 10px;
   width: 100%;
-  padding-top: 50px;
 
   img {
     width: 165px;
@@ -80,21 +79,15 @@ export const AuthContainerHeader = styled.div`
 `
 
 export const AuthContainerLogo = styled.div`
-  position: absolute;
-  top: -90px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 120px;
-  height: 120px;
-  margin-bottom: 10px;
-  border-radius: 100%;
+  margin-bottom: 15px;
 
-  background-color: white;
-  border: 2px solid rgba(0, 0, 0, 0.2);
-
-  img {
-    width: 80%;
+  h1 {
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: 600;
   }
 `
 
