@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import * as S from './styles'
@@ -53,22 +53,19 @@ const Admin = () => {
     return null
   }
 
-  const handleMenuClick = (key: string) => {
+  const handleMenuClick = useCallback((key: string) => {
     const selectedMenu = findObjectByKey(menusData, key)
     setActiveMenu(selectedMenu)
-  }
+  }, [])
 
   useEffect(() => {
     handleMenuClick('menu_registers_01')
-  }, [])
+  }, [handleMenuClick])
 
   useEffect(() => {
     if (!activeMenu) return
 
     const activeView = findComponentByKey(menus, activeMenu.key)
-
-    console.log(activeView)
-
     setActiveView(activeView)
   }, [activeMenu])
 

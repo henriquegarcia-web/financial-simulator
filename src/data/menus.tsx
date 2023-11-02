@@ -44,12 +44,12 @@ const menus = [
     render: null,
     menuSubmenus: [
       {
-        key: 'menu_project_01',
+        key: 'menu_projects_01',
         label: 'Novo Projeto',
         render: <>Novo Projeto Componente</>
       },
       {
-        key: 'menu_project_02',
+        key: 'menu_projects_02',
         label: 'Consultar Projetos',
         render: <>Consultar Projetos Componente</>
       }
