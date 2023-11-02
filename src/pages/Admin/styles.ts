@@ -97,3 +97,33 @@ export const AdminViews = styled.div`
 
   /* border: 1px solid blue; */
 `
+
+// ============================================ VIEW
+
+export const View = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  border-radius: 6px;
+
+  border: 1px solid rgba(0, 0, 0, 0.15);
+`
+
+export const ViewHeader = styled.div`
+  display: flex;
+  width: 100%;
+  padding: 0 0 10px 0;
+
+  font-size: 17px;
+  font-weight: 500;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+`
+
+export const ViewContent = styled.div`
+  display: flex;
+  flex: 1;
+`

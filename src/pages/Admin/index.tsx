@@ -7,13 +7,14 @@ import { Avatar, Dropdown, type MenuProps, Menu, Spin } from 'antd'
 
 type MenuItem = Required<MenuProps>['items'][number]
 
-import { menusData, privateMenus, rootSubmenuKeys } from '@/data/menus'
+import { menus, menusData, privateMenus, rootSubmenuKeys } from '@/data/menus'
 
 import { formatUsername } from '@/utils/functions/formatUsername'
 
 const Admin = () => {
   const [openKeys, setOpenKeys] = useState(['sub1'])
   const [activeMenu, setActiveMenu] = useState<any>(null)
+  const [activeView, setActiveView] = useState<any>(null)
 
   const onOpenChange: MenuProps['onOpenChange'] = (keys) => {
     const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1)
@@ -38,6 +39,20 @@ const Admin = () => {
     return null
   }
 
+  function findComponentByKey(data: any, key: string) {
+    const stack = [...data]
+    while (stack.length > 0) {
+      const current = stack.pop()
+      if (current.key === key) {
+        return current
+      }
+      if (current.menuSubmenus) {
+        stack.push(...current.menuSubmenus)
+      }
+    }
+    return null
+  }
+
   const handleMenuClick = (key: string) => {
     const selectedMenu = findObjectByKey(menusData, key)
     setActiveMenu(selectedMenu)
@@ -46,6 +61,16 @@ const Admin = () => {
   useEffect(() => {
     handleMenuClick('menu_registers_01')
   }, [])
+
+  useEffect(() => {
+    if (!activeMenu) return
+
+    const activeView = findComponentByKey(menus, activeMenu.key)
+
+    console.log(activeView)
+
+    setActiveView(activeView)
+  }, [activeMenu])
 
   return (
     <S.Admin>
@@ -71,13 +96,30 @@ const Admin = () => {
             onClick={({ key }) => handleMenuClick(key)}
           />
         </S.AdminMenu>
-        <S.AdminViews></S.AdminViews>
+        <S.AdminViews>
+          <View viewInfos={activeView} />
+        </S.AdminViews>
       </S.AdminContainer>
     </S.Admin>
   )
 }
 
 export default Admin
+
+// ============================================ VIEW
+
+interface IView {
+  viewInfos: any
+}
+
+const View = ({ viewInfos }: IView) => {
+  return (
+    <S.View>
+      <S.ViewHeader>{viewInfos?.label}</S.ViewHeader>
+      <S.ViewContent>{viewInfos?.label}</S.ViewContent>
+    </S.View>
+  )
+}
 
 // ============================================ USER MENU
 

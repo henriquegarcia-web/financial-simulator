@@ -15,6 +15,48 @@ export interface IMenu {
   menuDanger: boolean
 }
 
+const menus = [
+  {
+    key: 'menu_registers',
+    label: 'Cadastros',
+    render: null,
+    menuSubmenus: [
+      {
+        key: 'menu_registers_01',
+        label: 'Cadastro de Clientes',
+        render: <>Cadastro de Clientes Componente</>
+      },
+      {
+        key: 'menu_registers_02',
+        label: 'Cadastro de Fornecedores',
+        render: <>Cadastro de Fornecedores Componente</>
+      },
+      {
+        key: 'menu_registers_03',
+        label: 'Cadastro de Equipamentos',
+        render: <>Cadastro de Equipamentos Componente</>
+      }
+    ]
+  },
+  {
+    key: 'menu_project',
+    label: 'Projetos',
+    render: null,
+    menuSubmenus: [
+      {
+        key: 'menu_project_01',
+        label: 'Novo Projeto',
+        render: <>Novo Projeto Componente</>
+      },
+      {
+        key: 'menu_project_02',
+        label: 'Consultar Projetos',
+        render: <>Consultar Projetos Componente</>
+      }
+    ]
+  }
+]
+
 const privateMenus: IMenu[] = [
   {
     menuId: 'sair',
@@ -54,4 +96,4 @@ const menusData: MenuItem[] = [
 
 const rootSubmenuKeys = ['sub1', 'sub2', 'sub4']
 
-export { menusData, rootSubmenuKeys, getItem, privateMenus }
+export { menus, menusData, rootSubmenuKeys, getItem, privateMenus }
