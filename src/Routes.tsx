@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
-import { LandingPage, NotFoundPage } from './pages'
+import { AdminPage, LandingPage, NotFoundPage } from './pages'
 
 const AppRoutes = () => {
   return (
@@ -13,7 +13,8 @@ const AppRoutes = () => {
 
         {/* =============================================================== */}
 
-        <Route path="/admin" element={<LandingPage />} />
+        <Route path="/landing" element={<LandingPage />} />
+        <Route path="/admin" element={<AdminPage />} />
 
         {/* =============================================================== */}
       </Routes>
