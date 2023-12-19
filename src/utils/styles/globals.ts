@@ -47,7 +47,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     &::-webkit-scrollbar-thumb {
-      background: #ff7a00;
+      background: #2290ff;
     }
   }
 
@@ -64,7 +64,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     &::-webkit-scrollbar-thumb {
-      background: #ff7a00;
+      background: #2290ff;
     }
   }
 
@@ -89,7 +89,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     &::-webkit-scrollbar-thumb {
-      background: #ff7a00;
+      background: #2290ff;
       border-radius: 10px;
     }
   }
@@ -114,7 +114,7 @@ export const Window = styled.main`
   }
 
   &::-webkit-scrollbar-thumb {
-    background: #ff7a00;
+    background: #2290ff;
     border-radius: 10px;
   }
 `

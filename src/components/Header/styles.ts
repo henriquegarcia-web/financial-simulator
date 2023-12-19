@@ -7,6 +7,7 @@ import {
 import styled from 'styled-components'
 
 export const Header = styled.div`
+  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
@@ -17,6 +18,7 @@ export const Header = styled.div`
   padding: 0 20px;
 
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: white;
 `
 
 export const HeaderWrapper = styled.div`

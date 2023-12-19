@@ -31,6 +31,7 @@ export const ButtonPrimary = styled(Button)`
 export const ButtonSecondary = styled(Button)`
   font-weight: 500;
 
-  background-color: #2290ff;
+  background-color: transparent;
+  border: 2px solid white;
   color: white;
 `
