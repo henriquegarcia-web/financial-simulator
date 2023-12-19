@@ -17,7 +17,7 @@ const AppThemed = () => {
       theme={{
         algorithm: theme.defaultAlgorithm,
         token: {
-          colorPrimary: '#009079'
+          colorPrimary: '#2290ff'
         }
       }}
     >

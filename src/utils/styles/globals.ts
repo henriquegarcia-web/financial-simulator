@@ -4,8 +4,8 @@ import Colors from './colors'
 // import Fonts from "../styles/fonts";
 
 export const responsiveDesktop = '1000px'
-export const responsiveTablet = '760px'
-export const responsiveMobile = '480px'
+export const responsiveTablet = '900px'
+export const responsiveMobile = '680px'
 
 export const adminMenuWidth = '260px'
 export const adminHeaderHeight = '45px'

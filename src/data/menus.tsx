@@ -1,99 +1,72 @@
-import {
-  IoPeopleOutline,
-  IoFileTrayFullOutline,
-  IoExitOutline
-} from 'react-icons/io5'
-
 import type { MenuProps } from 'antd'
-type MenuItem = Required<MenuProps>['items'][number]
 
 export interface IMenu {
-  menuId: string
-  menuLabel: string
-  menuIcon: any
-  menuRender?: React.ReactNode
-  menuDanger: boolean
+  label: string
+  key: string
+  children?: IMenu[]
 }
 
-const menus = [
+const menus: MenuProps['items'] = [
   {
-    key: 'menu_registers',
-    label: 'Cadastros',
-    render: null,
-    menuSubmenus: [
+    label: 'Empréstimos',
+    key: 'menu_loans',
+    children: [
       {
-        key: 'menu_registers_01',
-        label: 'Cadastro de Clientes',
-        render: <>Cadastro de Clientes Componente</>
+        label: 'Empréstimo PJ sem garantia',
+        key: 'menu_loans_pj'
       },
       {
-        key: 'menu_registers_02',
-        label: 'Cadastro de Fornecedores',
-        render: <>Cadastro de Fornecedores Componente</>
-      },
-      {
-        key: 'menu_registers_03',
-        label: 'Cadastro de Equipamentos',
-        render: <>Cadastro de Equipamentos Componente</>
+        label: 'Empréstimo com garantia',
+        key: 'menu_loans_guarantee',
+        children: [
+          {
+            label: 'Imóveis',
+            key: 'menu_loans_guarantee_immobile'
+          },
+          {
+            label: 'Automóveis',
+            key: 'menu_loans_guarantee_vehicle'
+          },
+          {
+            label: 'Recebíveis',
+            key: 'menu_loans_guarantee_receivables'
+          }
+        ]
       }
     ]
   },
   {
-    key: 'menu_project',
-    label: 'Projetos',
-    render: null,
-    menuSubmenus: [
+    label: 'Produtos e Serviços',
+    key: 'menu_services',
+    children: [
       {
-        key: 'menu_projects_01',
-        label: 'Novo Projeto',
-        render: <>Novo Projeto Componente</>
+        label: 'Negócios internacionais',
+        key: 'menu_services_international_business'
       },
       {
-        key: 'menu_projects_02',
-        label: 'Consultar Projetos',
-        render: <>Consultar Projetos Componente</>
+        label: 'Consórcios',
+        key: 'menu_services_consortium'
+      }
+    ]
+  },
+  {
+    label: 'Sobre nós',
+    key: 'menu_aboutus',
+    children: [
+      {
+        label: 'Nossa cultura',
+        key: 'menu_aboutus_culture'
+      },
+      {
+        label: 'Visão, missão e valores',
+        key: 'menu_aboutus_missions'
+      },
+      {
+        label: 'Nosso time',
+        key: 'menu_aboutus_squad'
       }
     ]
   }
 ]
 
-const privateMenus: IMenu[] = [
-  {
-    menuId: 'sair',
-    menuLabel: 'Sair',
-    menuIcon: <IoExitOutline />,
-    menuDanger: true
-  }
-]
-
-function getItem(
-  label: React.ReactNode,
-  key: React.Key,
-  icon?: React.ReactNode,
-  children?: MenuItem[],
-  type?: 'group'
-): MenuItem {
-  return {
-    key,
-    icon,
-    children,
-    label,
-    type
-  } as MenuItem
-}
-
-const menusData: MenuItem[] = [
-  getItem('Cadastros', 'menu_registers', <IoPeopleOutline />, [
-    getItem('Cadastro de Clientes', 'menu_registers_01'),
-    getItem('Cadastro de Fornecedores', 'menu_registers_02'),
-    getItem('Cadastro de Equipamentos', 'menu_registers_03')
-  ]),
-  getItem('Projetos', 'menu_projects', <IoFileTrayFullOutline />, [
-    getItem('Novo Projeto', 'menu_projects_01'),
-    getItem('Consultar Projetos', 'menu_projects_02')
-  ])
-]
-
-const rootSubmenuKeys = ['sub1', 'sub2', 'sub4']
-
-export { menus, menusData, rootSubmenuKeys, getItem, privateMenus }
+export { menus }
