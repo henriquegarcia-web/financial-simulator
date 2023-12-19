@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const adminHeaderHeight = '50px'
 const adminMenuWidth = '250px'
 
-export const Admin = styled.main`
+export const Landing = styled.main`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -12,7 +12,7 @@ export const Admin = styled.main`
 
 // ============================================ ADMIN HEADER
 
-export const AdminHeader = styled.div`
+export const LandingHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,7 +23,7 @@ export const AdminHeader = styled.div`
   background-color: #024c6c;
 `
 
-export const AdminHeaderLogo = styled.div`
+export const LandingHeaderLogo = styled.div`
   display: flex;
 
   h1 {
@@ -34,7 +34,7 @@ export const AdminHeaderLogo = styled.div`
   }
 `
 
-export const AdminHeaderTitle = styled.div`
+export const LandingHeaderTitle = styled.div`
   display: flex;
 
   font-size: 18px;
@@ -43,7 +43,7 @@ export const AdminHeaderTitle = styled.div`
   color: white;
 `
 
-export const AdminHeaderUserMenu = styled.div`
+export const LandingHeaderUserMenu = styled.div`
   display: flex;
 `
 
@@ -71,7 +71,7 @@ export const UserMenuName = styled.p`
 
 // ============================================ ADMIN
 
-export const AdminContainer = styled.div`
+export const LandingContainer = styled.div`
   display: flex;
   width: 100%;
   height: calc(100% - ${adminHeaderHeight});
@@ -79,7 +79,7 @@ export const AdminContainer = styled.div`
 
 // ============================================ ADMIN MENU
 
-export const AdminMenu = styled.div`
+export const LandingMenu = styled.div`
   display: flex;
   width: ${adminMenuWidth};
   height: 100%;
@@ -89,7 +89,7 @@ export const AdminMenu = styled.div`
 
 // ============================================ ADMIN VIEWS
 
-export const AdminViews = styled.div`
+export const LandingViews = styled.div`
   display: flex;
   width: calc(100% - ${adminMenuWidth});
   height: 100%;

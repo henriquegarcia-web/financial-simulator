@@ -1,9 +1,4 @@
-import Admin from './Admin'
-import AdminSignin from './AdminSignin'
+import Landing from './Landing'
 import NotFound from './NotFound'
 
-export {
-  Admin as AdminPage,
-  AdminSignin as AdminSigninPage,
-  NotFound as NotFoundPage
-}
+export { Landing as LandingPage, NotFound as NotFoundPage }

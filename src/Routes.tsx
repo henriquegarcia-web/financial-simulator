@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
-import { AdminPage, AdminSigninPage, NotFoundPage } from './pages'
+import { LandingPage, NotFoundPage } from './pages'
 
 const AppRoutes = () => {
   return (
@@ -8,13 +8,12 @@ const AppRoutes = () => {
       <Routes>
         {/* =============================================================== */}
 
-        <Route path="/" element={<AdminSigninPage />} />
-        {/* <Route path="/*" element={<Navigate to="/" />} /> */}
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/*" element={<Navigate to="/" />} />
 
         {/* =============================================================== */}
 
-        <Route path="/admin/entrar" element={<AdminSigninPage />} />
-        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/admin" element={<LandingPage />} />
 
         {/* =============================================================== */}
       </Routes>
